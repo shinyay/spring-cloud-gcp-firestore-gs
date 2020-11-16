@@ -17,6 +17,7 @@ class EmployeeController(val repository: EmployeeRepository) {
 
     @PostMapping("")
     fun saveEmployee(@RequestBody employee: Employee): Employee {
+        logger.info("-----> saveEmployee")
         return repository.save(employee)
     }
 }

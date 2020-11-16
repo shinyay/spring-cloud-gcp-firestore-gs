@@ -1,6 +1,7 @@
-# Name
+# Spring Cloud GCP for Cloud Firestore Getting Started 
 
-Overview
+Cloud Firestore is a flexible, scalable database, which is s a cloud-hosted, NoSQL database.
+
 
 ## Description
 

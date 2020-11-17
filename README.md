@@ -9,6 +9,10 @@ Cloud Firestore is a flexible, scalable database, which is s a cloud-hosted, NoS
   - spring-cloud-gcp-starter-data-datastore
 
 ## Demo
+### POST Employee data
+```shell script
+$ curl -d '{"id":1, "firstName":"Alice", "lastName":"Riddle"}' -H 'Content-Type: application/json' http://localhost:8080/api/v1/employees
+```
 
 ## Features
 

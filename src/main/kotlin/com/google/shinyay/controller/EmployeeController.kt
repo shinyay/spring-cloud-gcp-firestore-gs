@@ -17,12 +17,13 @@ class EmployeeController(val repository: EmployeeRepository) {
 
     @PostMapping("")
     fun saveEmployee(@RequestBody employee: Employee): Employee {
-        logger.info("-----> saveEmployee")
+        logger.info("-----> saveEmployee: $employee")
         return repository.save(employee)
     }
 
     @DeleteMapping("/{id}")
-    fun deleteEmployee(@PathVariable id: Long) {
+    fun deleteEmployeeById(@PathVariable id: Long) {
+        logger.info("-----> deleteEmployeeById: $id")
         return repository.deleteById(id)
     }
 }

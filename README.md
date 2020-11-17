@@ -19,6 +19,11 @@ $ curl -d '{"id":1, "firstName":"Alice", "lastName":"Riddle"}' -H 'Content-Type:
 $ curl -X GET http://localhost:8080/api/v1/employees
 ```
 
+### DELETE Employees data
+```shell script
+$ curl -X DELETE http://localhost:8080/api/v1/employees/1
+```
+
 ## Features
 
 - feature:1

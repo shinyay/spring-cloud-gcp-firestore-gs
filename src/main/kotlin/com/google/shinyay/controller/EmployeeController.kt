@@ -20,4 +20,9 @@ class EmployeeController(val repository: EmployeeRepository) {
         logger.info("-----> saveEmployee")
         return repository.save(employee)
     }
+
+    @DeleteMapping("/{id}")
+    fun deleteEmployee(@PathVariable id: Long) {
+        return repository.deleteById(id)
+    }
 }

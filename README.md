@@ -14,6 +14,11 @@ Cloud Firestore is a flexible, scalable database, which is s a cloud-hosted, NoS
 $ curl -d '{"id":1, "firstName":"Alice", "lastName":"Riddle"}' -H 'Content-Type: application/json' http://localhost:8080/api/v1/employees
 ```
 
+### GET Employees data
+```shell script
+$ curl -X GET http://localhost:8080/api/v1/employees
+```
+
 ## Features
 
 - feature:1

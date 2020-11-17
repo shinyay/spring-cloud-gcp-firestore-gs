@@ -8,6 +8,17 @@ Cloud Firestore is a flexible, scalable database, which is s a cloud-hosted, NoS
   - spring-cloud-gcp-starter
   - spring-cloud-gcp-starter-data-datastore
 
+### Entity for Datastore
+
+- `import org.springframework.cloud.gcp.data.datastore.core.mapping.Entity`
+
+```kotlin
+@Entity
+data class Employee(@Id val id: Long,
+                    val firstName: String,
+                    val lastName: String)
+```
+
 ## Demo
 ### POST Employee data
 ```shell script

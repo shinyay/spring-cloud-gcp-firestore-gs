@@ -48,7 +48,8 @@ tasks.withType<KotlinCompile> {
 
 jib {
 	to {
-		image = "registry.hub.docker.com/shinyay/spring-cloud-gcp-firestore:0.0.1"
+		image = "gcr.io/<GCP_PROJECT_ID>/spring-cloud-gcp-firestore:0.0.1"
+//		image = "registry.hub.docker.com/shinyay/spring-cloud-gcp-firestore:0.0.1"
 		tags = setOf("latest")
 	}
 	container {

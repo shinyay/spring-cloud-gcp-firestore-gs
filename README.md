@@ -28,6 +28,12 @@ data class Employee(@Id val id: Long,
 interface EmployeeRepository : DatastoreRepository<Employee, Long>
 ```
 
+### Containerization
+
+```shell script
+$ ./gradlew clean jib
+```
+
 ## Demo
 ### POST Employee data
 ```shell script

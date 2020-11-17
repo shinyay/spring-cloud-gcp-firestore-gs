@@ -19,6 +19,15 @@ data class Employee(@Id val id: Long,
                     val lastName: String)
 ```
 
+### Repository for Datastore
+
+- `import org.springframework.cloud.gcp.data.datastore.repository.DatastoreRepository`
+
+```kotlin
+@Repository
+interface EmployeeRepository : DatastoreRepository<Employee, Long>
+```
+
 ## Demo
 ### POST Employee data
 ```shell script

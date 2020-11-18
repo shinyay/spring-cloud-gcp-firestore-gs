@@ -6,3 +6,5 @@ management:
     health:
       probes:
         enabled: true
+      show-details: always
+      show-components: always

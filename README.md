@@ -69,6 +69,9 @@ management:
 
 #### Readiness and Liveness Prove
 
+- **ReadinessProbe**
+  - It verifies if the Pod is ready to start receiving traffic.
+
 ```yaml
   livenessProbe:
     initialDelaySeconds: 10

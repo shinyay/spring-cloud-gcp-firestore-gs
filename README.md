@@ -55,6 +55,16 @@ jib {
 }
 ```
 
+### Actuator for Readiness and Liveness Probe
+
+```yaml
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+```
+
 ## Demo
 ### POST Employee data
 ```shell script

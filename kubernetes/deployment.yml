@@ -17,3 +17,12 @@ spec:
           image: gcr.io/valid-heuristic-293706/demo-app:20201118
           ports:
             - containerPort: 8080
+          livenessProbe:
+            initialDelaySeconds: 10
+            periodSeconds: 15
+            timeoutSeconds: 2
+            failureThreshold: 1
+            successThreshold: 1
+            httpGet:
+              port: 8080
+              path: /actuator/health/liveness

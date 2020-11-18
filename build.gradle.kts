@@ -22,6 +22,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.cloud:spring-cloud-gcp-starter")
 	implementation("org.springframework.cloud:spring-cloud-gcp-starter-data-datastore")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {

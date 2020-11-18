@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: employee-app
+spec:
+  selector:
+    matchLabels:
+      app: employee-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: employee-app
+    spec:
+      containers:
+        - name: employee-app
+          image: gcr.io/valid-heuristic-293706/demo-app:20201118
+          ports:
+            - containerPort: 8080

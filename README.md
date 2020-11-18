@@ -34,6 +34,24 @@ interface EmployeeRepository : DatastoreRepository<Employee, Long>
 $ ./gradlew clean jib
 ```
 
+#### Jib Configuration to Containerize
+
+```kotlin
+plugins {
+	id("com.google.cloud.tools.jib") version "2.6.0"
+}
+
+jib {
+	to {
+		image = "gcr.io/$GCP_PROJECT_ID/$APP_NAME:$APP_TAG"
+		tags = setOf("latest")
+	}
+	container {
+		jvmFlags = mutableListOf("-Xms512m", "-Xdebug")
+	}
+}
+```
+
 ## Demo
 ### POST Employee data
 ```shell script

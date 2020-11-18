@@ -65,6 +65,31 @@ management:
         enabled: true
 ```
 
+### Deployment Configuration
+
+#### Readiness and Liveness Prove
+
+```yaml
+  livenessProbe:
+    initialDelaySeconds: 10
+    periodSeconds: 15
+    timeoutSeconds: 2
+    failureThreshold: 1
+    successThreshold: 1
+    httpGet:
+      port: 8080
+      path: /actuator/health/liveness
+  readinessProbe:
+    initialDelaySeconds: 5
+    periodSeconds: 10
+    timeoutSeconds: 2
+    failureThreshold: 1
+    successThreshold: 1
+    httpGet:
+      port: 8080
+      path: /actuator/health/readiness
+```
+
 ## Demo
 ### POST Employee data
 ```shell script

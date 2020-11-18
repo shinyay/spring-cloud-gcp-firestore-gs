@@ -46,9 +46,13 @@ tasks.withType<KotlinCompile> {
 	}
 }
 
+val GCP_PROJECT_ID = if (hasProperty("gcp_project_id")) findProperty("gcp_project_id") as String else "library"
+val APP_NAME = if (hasProperty("app_name")) findProperty("app_name") as String else "demo-app"
+val APP_TAG = if (hasProperty("app_tag")) findProperty("app_tag") as String else "0.0.1"
+
 jib {
 	to {
-		image = "gcr.io/<GCP_PROJECT_ID>/spring-cloud-gcp-firestore:0.0.1"
+		image = "gcr.io/$GCP_PROJECT_ID/$APP_NAME:$APP_TAG"
 //		image = "registry.hub.docker.com/shinyay/spring-cloud-gcp-firestore:0.0.1"
 		tags = setOf("latest")
 	}

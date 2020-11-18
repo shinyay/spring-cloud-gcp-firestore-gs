@@ -69,8 +69,11 @@ management:
 
 #### Readiness and Liveness Prove
 
-- **ReadinessProbe**
+- **Readiness Probe**
   - It verifies if the Pod is ready to start receiving traffic.
+- **Liveness Probe**
+  - It checks if the Pod should be restarted.
+    - ex. Application is running though, it is unable to make progress, like deadlock.
 
 ```yaml
   livenessProbe:

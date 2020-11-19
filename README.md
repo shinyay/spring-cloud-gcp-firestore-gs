@@ -133,7 +133,9 @@ $ gcloud container clusters get-credentials employee-cluster --zone us-central1-
 $ sed -e "s|GCP_PROJECT|"(gcloud config get-value project)"|g" kubernetes/deployment.yml | kubectl apply -f -
 ```
 
-
+```shell script
+$ kubectl apply -f kubernetes/service.yml
+```
 
 ## Features
 

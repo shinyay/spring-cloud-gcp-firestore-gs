@@ -112,7 +112,7 @@ jib {
 }
 ```
 
-### Create GKE Cluster
+### 2. Create GKE Cluster
 ```shell script
 $ gcloud container clusters create employee-cluster \
     --num-nodes 1 \
@@ -120,6 +120,11 @@ $ gcloud container clusters create employee-cluster \
     --enable-stackdriver-kubernetes \
     --enable-ip-alias \
     --zone us-central1-c
+```
+
+#### Entry `kubeconfig`
+```shell script
+$ gcloud container clusters get-credentials employee-cluster --zone us-central1-c
 ```
 
 ### Deploy App to GKE

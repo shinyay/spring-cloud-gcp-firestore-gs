@@ -112,6 +112,16 @@ jib {
 }
 ```
 
+### Create GKE Cluster
+```shell script
+$ gcloud container clusters create employee-cluster \
+    --num-nodes 1 \
+    --scopes cloud-platform \
+    --enable-stackdriver-kubernetes \
+    --enable-ip-alias \
+    --zone us-central1-c
+```
+
 ### Deploy App to GKE
 
 ```shell script

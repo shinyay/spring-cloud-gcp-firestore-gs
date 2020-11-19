@@ -43,7 +43,7 @@ management:
 
 ### Deployment Configuration
 
-#### Readiness and Liveness Prove
+#### Readiness and Liveness Probe
 
 - **Readiness Probe**
   - It verifies if the Pod is ready to start receiving traffic.
@@ -71,6 +71,8 @@ management:
       port: 8080
       path: /actuator/health/readiness
 ```
+
+#### Readiness and Liveness Probes Configuration
 
 |Probe Configuration|Explanation|Default|
 |-------------------|-----------|-------|

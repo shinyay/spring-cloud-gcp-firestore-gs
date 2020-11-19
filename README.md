@@ -88,6 +88,13 @@ $ curl -X GET http://localhost:8080/api/v1/employees
 $ curl -X DELETE http://localhost:8080/api/v1/employees/1
 ```
 
+### 0. Login and obtain Credentials
+
+```shell script
+$ gcloud auth login
+$ gcloud auth application-default login
+```
+
 ### 1. Containerization
 
 ```shell script

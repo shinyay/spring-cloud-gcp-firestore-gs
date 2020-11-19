@@ -72,6 +72,14 @@ management:
       path: /actuator/health/readiness
 ```
 
+|Probe Configuration|Explanation|Default|
+|-------------------|-----------|-------|
+|initialDelaySeconds|Number of seconds after the container has started before liveness or readiness probes are initiated.|0|
+|periodSeconds|How often (in seconds) to perform the probe. |10|
+|timeoutSeconds|Number of seconds after which the probe times out.|1|
+|successThreshold|Minimum consecutive successes for the probe to be considered successful after having failed.|1|
+|failureThreshold|When a probe fails, Kubernetes will try failureThreshold times before giving up.<br>Giving up in case of liveness probe means restarting the container. <br>In case of readiness probe the Pod will be marked Unready.|3|
+
 ## Demo
 ### POST Employee data
 ```shell script

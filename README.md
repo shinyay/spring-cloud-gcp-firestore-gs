@@ -112,6 +112,12 @@ $ curl -X GET http://localhost:8080/api/v1/employees
 $ curl -X DELETE http://localhost:8080/api/v1/employees/1
 ```
 
+### Deploy App to GKE
+
+```shell script
+$ sed -e "s|GCP_PROJECT|"(gcloud config get-value project)"|g" kubernetes/deployment.yml | kubectl apply -f -
+```
+
 ## Features
 
 - feature:1

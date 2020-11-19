@@ -31,30 +31,6 @@ data class Employee(@Id val id: Long,
 interface EmployeeRepository : DatastoreRepository<Employee, Long>
 ```
 
-### Containerization
-
-```shell script
-$ ./gradlew clean jib
-```
-
-#### Jib Configuration to Containerize
-
-```kotlin
-plugins {
-	id("com.google.cloud.tools.jib") version "2.6.0"
-}
-
-jib {
-	to {
-		image = "gcr.io/$GCP_PROJECT_ID/$APP_NAME:$APP_TAG"
-		tags = setOf("latest")
-	}
-	container {
-		jvmFlags = mutableListOf("-Xms512m", "-Xdebug")
-	}
-}
-```
-
 ### Actuator for Readiness and Liveness Probe
 
 ```yaml
@@ -112,11 +88,37 @@ $ curl -X GET http://localhost:8080/api/v1/employees
 $ curl -X DELETE http://localhost:8080/api/v1/employees/1
 ```
 
+### 1. Containerization
+
+```shell script
+$ ./gradlew clean jib
+```
+
+#### Jib Configuration to Containerize
+
+```kotlin
+plugins {
+	id("com.google.cloud.tools.jib") version "2.6.0"
+}
+
+jib {
+	to {
+		image = "gcr.io/$GCP_PROJECT_ID/$APP_NAME:$APP_TAG"
+		tags = setOf("latest")
+	}
+	container {
+		jvmFlags = mutableListOf("-Xms512m", "-Xdebug")
+	}
+}
+```
+
 ### Deploy App to GKE
 
 ```shell script
 $ sed -e "s|GCP_PROJECT|"(gcloud config get-value project)"|g" kubernetes/deployment.yml | kubectl apply -f -
 ```
+
+
 
 ## Features
 

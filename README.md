@@ -127,7 +127,7 @@ $ gcloud container clusters create employee-cluster \
 $ gcloud container clusters get-credentials employee-cluster --zone us-central1-c
 ```
 
-### Deploy App to GKE
+### 3. Deploy App to GKE
 
 ```shell script
 $ sed -e "s|GCP_PROJECT|"(gcloud config get-value project)"|g" kubernetes/deployment.yml | kubectl apply -f -

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: employee-app
-          image: gcr.io/valid-heuristic-293706/demo-app:20201118
+          image: gcr.io/GCP_PROJECT/demo-app:20201119
           ports:
             - containerPort: 8080
           livenessProbe:
